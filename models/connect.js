@@ -8,7 +8,7 @@ const pgp = require('pg-promise')({
 // for connecting the database
 const options = {
     host: 'localhost',
-    database = 'todo'
+    database: 'todo-app'
 };
 // set pg-promise and options to variable to export
 const db = pgp(options);

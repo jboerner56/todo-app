@@ -11,6 +11,18 @@ class toDo {
     // get all from todo database
     static getAll(){
         return db.any(`select * from todo`)
+        .then ((arrayOfToDos) => {
+            return arrayOfToDos.map((todoData) => {
+                const aToDo = new toDo(
+                    todoData.score,
+                    todoData.id,
+                    todoData.content,
+                    todoData.restaurant_id,
+                    todoData.user_id
+                );
+                return aToDo;
+            });
+        });
     }
 }
 module.exports = toDo;

@@ -14,9 +14,9 @@
   },
   "scripts": {
     "dev": "nodemon index.js",
-    "db:create": "createdb restaurants-app",
-    "db:init": "psql -f schema.sql restaurants-app && psql -f seed.sql restaurants-app",
-    "db:destroy": "dropdb restaurants-app",
+    "db:create": "createdb todo-app",
+    "db:init": "psql -f schema.sql todo-app && psql -f seed.sql todo-app",
+    "db:destroy": "dropdb todo-app",
     "db:reset": "npm run db:destroy; npm run db:create && npm run db:init",
     "test": "mocha",
     "test:watch": "mocha -w"
