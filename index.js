@@ -29,6 +29,9 @@ const server = http.createServer(async (req, res) => {
                 const theToDo = await Todo.getById(toDoID);
                 const toDoJSON = JSON.stringify(theToDo);
                 res.end(toDoJSON);
+            } else {
+                res.statusCode = 404;
+                res.end('No Data Available');
             }
         }
     }
