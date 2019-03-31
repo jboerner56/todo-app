@@ -9,7 +9,9 @@
     "nodemon": "^1.18.10",
     "pg-promise": "^8.6.4"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "mocha": "^6.0.2"
+  },
   "scripts": {
     "dev": "nodemon index.js",
     "db:create": "createdb restaurants-app",
