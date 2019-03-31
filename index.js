@@ -1,5 +1,7 @@
 const http = require('http');
+// this is the local ip for every computer
 const hostname = '127.0.0.1';
+// port the server will listen on
 const port = 3000;
 // import todo class
 const Todo = require('./models/todo');
@@ -25,11 +27,15 @@ const server = http.createServer(async (req, res) => {
                 // when there are 3 parts in the url
                 // the user is trying to get by an individal id
             } else if (parts.length === 3){
+                // the second index of 'parts' is the id from the todo db
                 const toDoID = parts[2];
+                // 
                 const theToDo = await Todo.getById(toDoID);
+                // need to change data to a string so it will show up in browser
                 const toDoJSON = JSON.stringify(theToDo);
                 res.end(toDoJSON);
             } else {
+                // need else block for if there is no data for what the person is looking for
                 res.statusCode = 404;
                 res.end('No Data Available');
             }
